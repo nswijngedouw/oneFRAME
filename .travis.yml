@@ -4,8 +4,8 @@ node_js:
 
 branches:
     only:
-     - DEV
-     - Master
+     - Dev
+     - /feature/.*
 before_script:
  - npm install -g firebase-tools
  - npm install -g vue/cli
