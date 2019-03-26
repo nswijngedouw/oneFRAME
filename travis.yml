@@ -1,0 +1,22 @@
+language: node_js
+node_js: 
+ - "11.12.0"
+
+branches:
+    only:
+     - dev
+before_script:
+ - npm install -g firebase-tools
+ - npm install -g vue/cli
+ 
+script:
+ - npm run build
+ 
+after_success:
+ - firebase deploy --token $FIREBASE_TOKEN
+ - npm run serve
+ 
+notifications:
+    email:
+        on_failure: change
+        on_success: change
