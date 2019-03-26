@@ -14,7 +14,7 @@ script:
 
 deploy:
      provider: firebase
-     toker: 
+     token: 
 	secure: $FIREBASE_TOKEN
 
 notifications:
