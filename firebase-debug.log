@@ -1,0 +1,34 @@
+[debug] [2019-03-26T17:44:20.625Z] ----------------------------------------------------------------------
+[debug] [2019-03-26T17:44:20.628Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\NSWIJNGE\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-03-26T17:44:20.628Z] CLI Version:   6.5.0
+[debug] [2019-03-26T17:44:20.628Z] Platform:      win32
+[debug] [2019-03-26T17:44:20.628Z] Node Version:  v11.12.0
+[debug] [2019-03-26T17:44:20.631Z] Time:          Tue Mar 26 2019 18:44:20 GMT+0100 (GMT+01:00)
+[debug] [2019-03-26T17:44:20.631Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-03-26T17:44:20.650Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-03-26T17:44:20.652Z] > authorizing via signed-in user
+[debug] [2019-03-26T17:44:20.652Z] [iam] checking project oneframe-ce302 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2019-03-26T17:44:20.653Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/oneframe-ce302:testIamPermissions  
+
+[debug] [2019-03-26T17:44:22.535Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-26T17:44:22.537Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/oneframe-ce302  
+ 
+[debug] [2019-03-26T17:44:22.846Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'oneframe-ce302'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2019-03-26T17:44:28.910Z] >>> HTTP REQUEST PUT https://oneframe-ce302.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2019-03-26T17:44:29.511Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database oneframe-ce302 is valid
+[debug] [2019-03-26T17:44:29.513Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/oneframe-ce302  
+ 
