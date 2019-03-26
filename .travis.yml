@@ -12,11 +12,9 @@ before_script:
 script:
  - npm run build
  
-after_script:
+after_success:
  - firebase deploy --token $FIREBASE_TOKEN
-
- after_success:
- - echo "Firebase deploy succesfull!"
+ 
  
 notifications:
     email:
