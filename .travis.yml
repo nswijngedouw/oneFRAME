@@ -9,6 +9,7 @@ branches:
      - /feature/
 before_script:
  - npm install -g firebase-tools
+ - npm install -g @vue/cli
  
 script:
  - npm run build
