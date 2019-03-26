@@ -1,7 +1,7 @@
 
 language: node_js
 node_js: 
- - "11.12.0"
+ - "stable"
 
 branches:
     only:
@@ -9,13 +9,14 @@ branches:
      - /feature/
 before_script:
  - npm install -g firebase-tools
- - npm install -g @vue/cli
- 
 script:
  - npm run build
  
-after_success:
+after_script:
  - firebase deploy --token $FIREBASE_TOKEN
+
+ after_success:
+ - echo "Firebase deploy succesfull!"
  
 notifications:
     email:
