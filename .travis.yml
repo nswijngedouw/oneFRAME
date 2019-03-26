@@ -11,10 +11,12 @@ before_script:
  
 script:
  - npm run build
- 
-after_success:
- - firebase deploy --token $FIREBASE_TOKEN
- 
+
+deploy:
+     provider: firebase
+     toker: 
+	secure: $FIREBASE_TOKEN
+
 notifications:
     email:
         on_failure: change
