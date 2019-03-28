@@ -10,6 +10,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@firebase/firestore": "^1.1.1",
     "firebase": "^5.9.1",
     "firebase-tools": "^6.5.0",
     "register-service-worker": "^1.6.2",
