@@ -1,12 +1,22 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/login">Login page</router-link>
-    </div>
-    <router-view />
+ 
+  <div id="app">   
+   <Navbar />
+   <v-content>
+   <router-view />
+   </v-content>
   </div>
 </template>
+
+<script>
+import Navbar from "./views/Navigation/NavigationDrawer"
+export default {
+    components: {
+        Navbar
+    }
+}
+
+</script>
 
 <style>
 #app {
@@ -28,4 +38,6 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+  @import '/main'
 </style>

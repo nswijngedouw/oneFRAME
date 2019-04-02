@@ -42,6 +42,14 @@ export default new Vuex.Store({
             commit('setIsAuthenticated', false);
         });
     },
+    logout({commit}){
+      commit('setUser', null);
+      firebase.auth().signOut();
+    },
+    autoSignIn({commit}, payload){
+      commit('setUser', {id: payload.uid})
+    }
+    
     
   },
   getters: {

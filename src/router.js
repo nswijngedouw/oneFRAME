@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import HomePage from "./views/HomePage.vue";
+import Gallery from "./views/Gallery.vue"
 import store from "./store";
 import firebase from "firebase";
 
@@ -34,6 +35,14 @@ const router = new Router({
       name: "homepage",
       component: HomePage,
       meta:{
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/gallery",
+      name: "homepage",
+      component: Gallery,
+      meta: {
         requiresAuth: true
       }
     }
