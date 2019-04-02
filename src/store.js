@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import firebase from "firebase";
+import router from "./router";
 
 Vue.use(Vuex);
 
@@ -13,13 +14,14 @@ export default new Vuex.Store({
   mutations: {
     setUser(state, payload) {
       state.user = payload;
+      console.log(state.user)
     },
     setIsAuthenticated(state, payload) {
         state.isAuthenticated = payload;
     },
     setLoginStatus(state, payload){
       state.loginStatus = payload;
-      console.log(state.loginStatus);
+      console.log(state.loginStatus)
     }
   },
   actions: {
@@ -28,10 +30,11 @@ export default new Vuex.Store({
     firebase
         .auth()
         .signInWithEmailAndPassword(email, password)
-        .then(user => {            
+        .then(user => {
             commit('setLoginStatus', 'LOGIN_SUCCESS')
             commit('setUser', user);
-            commit('setIsAuthenticated', true);
+            commit('setIsAuthenticated', true);     
+            router.push('/homepage')
         })
         .catch(() => {          
             commit('setLoginStatus', 'LOGIN_ERROR')
@@ -40,5 +43,9 @@ export default new Vuex.Store({
         });
     },
     
-  }
+  },
+  getters: {
+    user: state => state.user
+  },
+  
 });

@@ -52,7 +52,7 @@ export default {
                 this.$store.dispatch('userLogin', {
                     email: this.email,
                     password: this.password
-                });
+                })
             }
         }
     }
