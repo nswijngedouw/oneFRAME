@@ -9,7 +9,8 @@ export default new Vuex.Store({
   state: {
     user: null,
     isAuthenticated: false,
-    loginStatus: 'LOGOUT'
+    loginStatus: 'LOGOUT',
+    pictures: []
   },
   mutations: {
     setUser(state, payload) {
@@ -48,6 +49,18 @@ export default new Vuex.Store({
     },
     autoSignIn({commit}, payload){
       commit('setUser', {id: payload.uid})
+    },
+    setDisplayedImage({commit}, payload){
+      const picture = {
+        id: payload.id,
+        description: payload.title,
+        src: payload.src
+      };
+      console.log(picture);
+      firebase.database().ref('images/displayed_image').set(picture)
+        .then((data) => {
+          console.log(data);
+        })
     }
     
     

@@ -20,6 +20,9 @@
                             <v-card-text>
                                 {{ info.src}}
                             </v-card-text>
+                            <v-card-actions>
+                                <v-btn color="orange" flat @click="chosePicture(info)">Cast picture</v-btn>
+                            </v-card-actions>
                         </v-card>
                     </v-dialog>
                 </v-carousel>
@@ -48,6 +51,9 @@ export default {
         },
         openDialog(index){
             this.info = this.pictures[index]
+        },
+        chosePicture(picture){
+            this.$store.dispatch('setDisplayedImage', picture);
         }
     }
 }
