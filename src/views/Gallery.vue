@@ -2,11 +2,12 @@
     <v-container>
         <v-layout>
             <v-flex xs12>
-                <v-carousel height="800" class="mt-2" :cycle="false">
+                <v-carousel height="650" class="mt-2" :cycle="false">
                     <v-carousel-item v-for="(pic, index) in pictures"
                         :src="pic.src"
                         :key="index">
-                    <v-btn flat @click.native.stop="dialog = !dialog" v-on:click="openDialog(index)"><v-icon x-large>info</v-icon>
+                    <v-btn flat @click.native.stop="dialog = !dialog" v-on:click="openDialog(index)">
+                        <v-icon x-large>info</v-icon>
                     </v-btn>
                     </v-carousel-item>
                     <v-dialog dark v-model="dialog">
