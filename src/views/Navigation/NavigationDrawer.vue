@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <v-toolbar flat app class="blue lighten-1">
+        <v-toolbar flat app dark class="grey darken-3">
             <v-toolbar-side-icon class="hidden-sm-and-up" @click.native.stop="drawer = !drawer"></v-toolbar-side-icon>
              <v-toolbar-title>
                     <router-link to="/" tag="span" style="cursor : pointer">OneFRAME</router-link>
@@ -21,10 +21,10 @@
             </v-toolbar-items>
             
         </v-toolbar>
-        <v-navigation-drawer temporary="" v-model="drawer" app class="blue lighten-1">
+        <v-navigation-drawer temporary="" v-model="drawer" app class="grey darken-3">
             <v-list>
                 <v-list-tile v-for="item in menuItems" :key="item.title" router :to="item.link">
-                    <v-list-tile-action>
+                    <v-list-tile-action>      
                         <v-icon>{{ item.icon }}</v-icon>
                     </v-list-tile-action>                    
                     <v-list-tile-content>{{item.title}}</v-list-tile-content>

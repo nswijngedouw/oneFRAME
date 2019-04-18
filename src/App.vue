@@ -9,7 +9,8 @@
 </template>
 
 <script>
-import Navbar from "./views/Navigation/NavigationDrawer"
+import Navbar from "./views/Navigation/NavigationDrawer";
+
 export default {
     components: {
         Navbar
